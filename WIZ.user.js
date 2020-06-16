@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         WorkFlowy Images on Zoom (WIZ)
 // @namespace    https://rawbytz.wordpress.com
-// @version      0.2.6
+// @version      0.2.7
 // @description  Display images in WorkFlowy only when zooming.
 // @author       rawbytz
 // @match        https://workflowy.com/*
-// @match        https://beta.workflowy.com/*
+// @match        https://*.workflowy.com/*
 // @updateUrl    https://github.com/rawbytz/WIZ/raw/master/WIZ.user.js
 // @downloadUrl  https://github.com/rawbytz/WIZ/raw/master/WIZ.user.js
 // @grant        none
