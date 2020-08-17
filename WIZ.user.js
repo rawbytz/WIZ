@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WorkFlowy Images on Zoom (WIZ)
 // @namespace    https://rawbytz.wordpress.com
-// @version      0.2.7
+// @version      0.2.8
 // @description  Display images in WorkFlowy only when zooming.
 // @author       rawbytz
 // @match        https://workflowy.com/*
@@ -68,7 +68,7 @@
 
   //Load with New Tab
   function waitForActivePage() {
-    if (document.getElementsByClassName("page active").length > 0) {
+    if (document.querySelector(".page.active")) {
       addStyle();
       wizMe();
       return
@@ -77,13 +77,10 @@
   }
   waitForActivePage();
 
-  // Run on location change
-  // window.WFEventListener = event => { if (event === "locationChanged") wizMe() };
-
   //Fix for duplicate global listener
   const previousListener = window.WFEventListener;
   window.WFEventListener = event => {
-    previousListener && previousListener(event);
-    if (event === "locationChanged") wizMe()
+    if (previousListener) previousListener(event);
+    if (event === "locationChanged") wizMe();
   };
 })();
